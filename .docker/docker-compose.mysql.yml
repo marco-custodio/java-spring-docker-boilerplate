@@ -1,0 +1,13 @@
+# docker-compose -f docker-compose.mysql.yml down; docker-compose -f docker-compose.mysql.yml up --build -d
+version: '3'
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: java_spring_boilerplate
+      MYSQL_PASSWORD: ${MYSQL_USER:-cHJvbWV0aGV1cw==}
+      MYSQL_ROOT_PASSWORD:  ${MYSQL_USER:-cHJvbWV0aGV1cw==}
+    ports:
+      - '3306:3306'

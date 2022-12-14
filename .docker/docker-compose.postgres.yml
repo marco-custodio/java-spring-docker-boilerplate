@@ -1,0 +1,13 @@
+# docker-compose -f docker-compose.postgres.yml down; docker-compose -f docker-compose.postgres.yml up --build -d
+version: '3'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: java_spring_boilerplate
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-cHJvbWV0aGV1cw==}
+    ports:
+      - "5432:5432"
